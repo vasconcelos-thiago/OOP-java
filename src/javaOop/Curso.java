@@ -1,22 +1,21 @@
 package javaOop;
 
-import java.time.LocalDate;
 
 public class Curso extends Conteudo{
 
-    private LocalDate data;
+    private int cargaHoraria;
 
     @Override
     public double calcularXp() {
-        return 0;
+        return XP_PADRAO*cargaHoraria;
     }
 
-    public LocalDate getData() {
-        return data;
+    public int getCargaHoraria() {
+        return cargaHoraria;
     }
 
-    public void setData(LocalDate data) {
-        this.data = data;
+    public void setCargaHoraria(int cargaHoraria) {
+        this.cargaHoraria = cargaHoraria;
     }
 
     @Override
@@ -24,7 +23,7 @@ public class Curso extends Conteudo{
         return "Curso{" +
                 "titulo='" + getTitulo() + '\'' +
                 ", descricao='" + getDescricao() + '\'' +
-                ", data=" + data +
+                ", cargaHoraria=" + cargaHoraria +
                 '}';
     }
 }

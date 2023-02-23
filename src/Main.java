@@ -1,8 +1,9 @@
+import javaOop.Conteudo;
 import javaOop.Curso;
 import javaOop.Mentoria;
 
 import java.time.LocalDate;
-//teste inserção de classe
+
 public class Main {
     public static void main(String[] args) {
 
@@ -10,18 +11,19 @@ public class Main {
         Curso curso = new Curso();
         curso.setTitulo("curso de java");
         curso.setDescricao("Aprenda orientação a objetos com java");
-        curso.setData(LocalDate.now());
-
+        curso.setCargaHoraria(3);
 
         Curso curso2 = new Curso();
         curso2.setTitulo("curso de Spring");
         curso2.setDescricao("Aprenda Spring ");
-        curso2.setData(LocalDate.now());
+        curso2.setCargaHoraria(9);
 
         Curso curso3 = new Curso();
         curso3.setTitulo("curso de Angular");
         curso3.setDescricao("Aprenda a usar Angular com Spring ");
-        curso3.setData(LocalDate.now());
+        curso3.setCargaHoraria(5);
+
+        Conteudo conteudo = new Curso();
 
         System.out.println(curso);
         System.out.println(curso2);
@@ -42,6 +44,11 @@ public class Main {
         mentoria2.setTitulo("mentoria Spring");
         mentoria2.setDescricao("descrição mentoria Spring");
         mentoria2.setData(LocalDate.now());
+
+        System.out.println(mentoria);
+        System.out.println(mentoria1);
+        System.out.println(mentoria2);
+
 
 
     }
