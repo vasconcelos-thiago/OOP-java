@@ -2,25 +2,13 @@ package javaOop;
 
 import java.time.LocalDate;
 
-public class Curso {
-    private String titulo;
-    private String descricao;
+public class Curso extends Conteudo{
+
     private LocalDate data;
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descrição) {
-        this.descricao = descrição;
+    @Override
+    public double calcularXp() {
+        return 0;
     }
 
     public LocalDate getData() {
@@ -34,8 +22,8 @@ public class Curso {
     @Override
     public String toString() {
         return "Curso{" +
-                "titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
+                "titulo='" + getTitulo() + '\'' +
+                ", descricao='" + getDescricao() + '\'' +
                 ", data=" + data +
                 '}';
     }
