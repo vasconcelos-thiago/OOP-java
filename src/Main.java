@@ -1,7 +1,7 @@
 import javaOop.Curso;
 
 import java.time.LocalDate;
-//teste atualização
+//teste inserção de classe 
 public class Main {
     public static void main(String[] args) {
 
