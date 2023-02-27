@@ -2,6 +2,7 @@ package javaOop;
 
 import java.util.LinkedHashSet;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 public class Dev {
@@ -9,11 +10,24 @@ public class Dev {
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudoConcluidos = new LinkedHashSet<>();
 
-    public void inscreverBootcamp(BootCamp bootCamp){}
+    public void inscreverBootcamp(BootCamp bootCamp){
+        this.conteudosInscritos.addAll(bootCamp.getCenteudos());
+        bootCamp.getDevsInscritos().add(this);
+    }
 
-    public void progredir() {}
+    public void progredir() {
+        Optional<Conteudo> conteudo = this.conteudosInscritos.stream().findFirst();
+        if (conteudo.isPresent()){
+            this.conteudoConcluidos.add(conteudo.get());
+            this.conteudosInscritos.remove(conteudo.get());
+        }else {
+            System.err.println("voce nao esta matriculado em nenhum conteudo!");
+        }
+    }
 
-    public void calcularTotalXp() {}
+    public double calcularTotalXp() {
+        return this.conteudoConcluidos.stream().mapToDouble(Conteudo::calcularXp).sum();
+    }
 
     public String getNome() {
         return nome;
