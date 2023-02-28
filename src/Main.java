@@ -1,6 +1,4 @@
-import javaOop.Conteudo;
-import javaOop.Curso;
-import javaOop.Mentoria;
+import javaOop.*;
 
 import java.time.LocalDate;
 
@@ -25,9 +23,9 @@ public class Main {
 
         Conteudo conteudo = new Curso();
 
-        System.out.println(curso);
+       /* System.out.println(curso);
         System.out.println(curso2);
-        System.out.println(curso3);
+        System.out.println(curso3);*/
 
 
         Mentoria mentoria = new Mentoria();
@@ -45,9 +43,38 @@ public class Main {
         mentoria2.setDescricao("descrição mentoria Spring");
         mentoria2.setData(LocalDate.now());
 
-        System.out.println(mentoria);
+        /*System.out.println(mentoria);
         System.out.println(mentoria1);
         System.out.println(mentoria2);
+*/
+        BootCamp bootCamp =new BootCamp();
+        bootCamp.setNome("Java Developer");
+        bootCamp.setDescricao("Aprenda java de forma simples");
+        bootCamp.getCenteudos().add(curso);
+        bootCamp.getCenteudos().add(curso2);
+        bootCamp.getCenteudos().add(mentoria);
+
+        Dev devThiago =new Dev();
+        devThiago.setNome("Thiago");
+        devThiago.inscreverBootcamp(bootCamp);
+        devThiago.progredir();
+        System.out.println("-");
+        System.out.println("conteudos Incritos: " +devThiago.getConteudosInscritos());
+        System.out.println("conteudos Concluidos: " +devThiago.getConteudoConcluidos());
+        System.out.println("XP: "+devThiago.calcularTotalXp());
+
+        System.out.println("------");
+
+        Dev devBaruck = new Dev();
+        devBaruck.setNome("barugo");
+        devBaruck.inscreverBootcamp(bootCamp);
+        devBaruck.progredir();
+        devBaruck.progredir();
+        devBaruck.progredir();
+        System.out.println("-");
+        System.out.println("conteudos Inscritos: " +devBaruck.getConteudosInscritos());
+        System.out.println("conteudos Concluidos: " +devBaruck.getConteudoConcluidos());
+        System.out.println("XP: "+devBaruck.calcularTotalXp());
 
 
 
